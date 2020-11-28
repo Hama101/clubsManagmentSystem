@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block head %}
+        <title>Clubs</title>
+{% endblock %}
+
+{% block body %}
+    <h1>CLubs :</h1>
+    <div class="row">
+        {% for c in clubs %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{c.logo_url}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{c.name}}</h5>
+                    <p class="card-text">Members : {{c.nbMembers}}</p>
+                    <a href="./events" class="btn btn-primary">About</a>
+                </div>
+            </div>
+        </div>
+        {%endfor %}
+    </div>
+
+{%  endblock  %}

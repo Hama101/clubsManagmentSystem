@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block head %}
+        <title>Clubs</title>
+{% endblock %}
+
+{% block body %}
+
+<main role="main">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">All Events</h1>
+            <p class="lead text-muted">The main goal of our events is to help everyone get comftarbale with tech industry !</p>
+        </div>
+        </section>
+
+    <main class="album py-5 ">
+        <div class="container">
+            <div class="row">
+            {%  for e in events%}
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="{{e.event_img}}" alt="{{e.title}}">
+                    <div class="card-body">
+                        <p class="card-text">{{e.description}}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a  href="./{{e.title}}"class="btn btn-sm btn-outline-secondary">View</a>
+                        </div>
+                        <small class="text-muted">{{e.date}}</small>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            {%  endfor    %}
+        </div>
+    </div>
+
+</main>
+
+{%  endblock  %}
